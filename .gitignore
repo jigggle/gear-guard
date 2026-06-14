@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.env
+
+data/raw/
+data/processed/
+models/
+reports/figures/
+
+*.joblib
+*.sqlite
+*.db
