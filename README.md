@@ -556,18 +556,6 @@ Potential improvements include:
 
 ---
 
-## Resume Summary
-
-GearGuard is a manufacturing-style quality analytics project based on football equipment operations. It uses Python, SQL, machine learning, anomaly detection, drift monitoring, feature attribution, and Streamlit to predict equipment defect risk and support faster root-cause analysis.
-
-Resume bullet:
-
-```text
-Built GearGuard, a manufacturing-style quality monitoring pipeline for football equipment operations using Python, SQL, scikit-learn, SQLite, and Streamlit to predict defect risk, detect anomalous usage and inspection patterns, monitor seasonal drift, and explain root-cause-style risk drivers through feature attribution.
-```
-
----
-
 ## Project Status
 
 V1 Completed.
