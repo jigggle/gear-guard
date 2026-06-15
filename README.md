@@ -570,7 +570,7 @@ Built GearGuard, a manufacturing-style quality monitoring pipeline for football 
 
 ## Project Status
 
-Complete v1.
+V1 Completed.
 
 Current capabilities:
 
