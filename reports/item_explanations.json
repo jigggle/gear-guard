@@ -1,0 +1,1311 @@
+{
+  "model_name": "logistic_regression",
+  "method": "For the selected logistic regression model, explanations are computed from standardized feature values multiplied by model coefficients. This provides directional feature attribution for item-level risk.",
+  "item_explanations": [
+    {
+      "item_id": "EQ-00206",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_A",
+      "batch_id": "Vendor_A_B03",
+      "season": "Spring_2025",
+      "predicted_defect_risk": 0.9999,
+      "risk_tier": "critical",
+      "anomaly_score": 0.087,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 3.083077,
+          "absolute_contribution": 3.083077,
+          "transformed_value": 6.491468,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -2.800714,
+          "absolute_contribution": 2.800714,
+          "transformed_value": 3.431526,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 2.484717,
+          "absolute_contribution": 2.484717,
+          "transformed_value": -4.370699,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.980669,
+          "absolute_contribution": 1.980669,
+          "transformed_value": -3.453664,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.774656,
+          "absolute_contribution": 1.774656,
+          "transformed_value": 3.70989,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.730347,
+          "absolute_contribution": 1.730347,
+          "transformed_value": 2.766914,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.433087,
+          "absolute_contribution": 1.433087,
+          "transformed_value": 2.32978,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 1.365735,
+          "absolute_contribution": 1.365735,
+          "transformed_value": 4.157543,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-00206 (shoulder_pads) was flagged as critical risk with predicted defect probability of 100.0%. The strongest risk drivers were: repair_count, inspection_score, material_condition_score, game_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-03630",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_C",
+      "batch_id": "Vendor_C_B18",
+      "season": "Spring_2025",
+      "predicted_defect_risk": 0.9998,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0837,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -2.97839,
+          "absolute_contribution": 2.97839,
+          "transformed_value": 3.64922,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 2.197389,
+          "absolute_contribution": 2.197389,
+          "transformed_value": 3.513739,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 2.043664,
+          "absolute_contribution": 2.043664,
+          "transformed_value": -3.594874,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.996964,
+          "absolute_contribution": 1.996964,
+          "transformed_value": 3.24648,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.98954,
+          "absolute_contribution": 1.98954,
+          "transformed_value": -3.469133,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.793206,
+          "absolute_contribution": 1.793206,
+          "transformed_value": 3.775625,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 1.753214,
+          "absolute_contribution": 1.753214,
+          "transformed_value": 5.337099,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.693585,
+          "absolute_contribution": 1.693585,
+          "transformed_value": 3.540414,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-03630 (shoulder_pads) was flagged as critical risk with predicted defect probability of 100.0%. The strongest risk drivers were: usage_sessions, inspection_score, practice_exposure_count, material_condition_score. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-01463",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_C",
+      "batch_id": "Vendor_C_B02",
+      "season": "Fall_2025",
+      "predicted_defect_risk": 0.9997,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0776,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -2.843933,
+          "absolute_contribution": 2.843933,
+          "transformed_value": 3.484478,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 2.536946,
+          "absolute_contribution": 2.536946,
+          "transformed_value": -4.462573,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 2.224632,
+          "absolute_contribution": 2.224632,
+          "transformed_value": -3.879059,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.974988,
+          "absolute_contribution": 1.974988,
+          "transformed_value": 3.158108,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.936796,
+          "absolute_contribution": 1.936796,
+          "transformed_value": 4.048842,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.793206,
+          "absolute_contribution": 1.793206,
+          "transformed_value": 3.775625,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.663764,
+          "absolute_contribution": 1.663764,
+          "transformed_value": 2.704794,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 1.365735,
+          "absolute_contribution": 1.365735,
+          "transformed_value": 4.157543,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-01463 (shoulder_pads) was flagged as critical risk with predicted defect probability of 100.0%. The strongest risk drivers were: inspection_score, material_condition_score, usage_sessions, game_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-04529",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_C",
+      "batch_id": "Vendor_C_B07",
+      "season": "Fall_2024",
+      "predicted_defect_risk": 0.9997,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0194,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 2.65312,
+          "absolute_contribution": 2.65312,
+          "transformed_value": 5.586187,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 1.550382,
+          "absolute_contribution": 1.550382,
+          "transformed_value": -2.727174,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.263305,
+          "absolute_contribution": 1.263305,
+          "transformed_value": 2.02009,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.195551,
+          "absolute_contribution": 1.195551,
+          "transformed_value": -2.084664,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.125517,
+          "absolute_contribution": 1.125517,
+          "transformed_value": 1.829762,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -1.076777,
+          "absolute_contribution": 1.076777,
+          "transformed_value": 1.319302,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.045023,
+          "absolute_contribution": 1.045023,
+          "transformed_value": 2.184604,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 0.978256,
+          "absolute_contribution": 0.978256,
+          "transformed_value": 2.977986,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-04529 (shoulder_pads) was flagged as critical risk with predicted defect probability of 100.0%. The strongest risk drivers were: repair_count, inspection_score, usage_sessions, material_condition_score. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-01197",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_C",
+      "batch_id": "Vendor_C_B13",
+      "season": "Fall_2024",
+      "predicted_defect_risk": 0.9994,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0685,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -2.810318,
+          "absolute_contribution": 2.810318,
+          "transformed_value": 3.443293,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 2.618193,
+          "absolute_contribution": 2.618193,
+          "transformed_value": -4.605489,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.974988,
+          "absolute_contribution": 1.974988,
+          "transformed_value": 3.158108,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.894441,
+          "absolute_contribution": 1.894441,
+          "transformed_value": 3.079808,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 1.753214,
+          "absolute_contribution": 1.753214,
+          "transformed_value": 5.337099,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.572585,
+          "absolute_contribution": 1.572585,
+          "transformed_value": -2.742093,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.36325,
+          "absolute_contribution": 1.36325,
+          "transformed_value": 2.870344,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.207164,
+          "absolute_contribution": 1.207164,
+          "transformed_value": 2.523557,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-01197 (shoulder_pads) was flagged as critical risk with predicted defect probability of 99.9%. The strongest risk drivers were: inspection_score, usage_sessions, practice_exposure_count, fit_complaint_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-02120",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_C",
+      "batch_id": "Vendor_C_B10",
+      "season": "Fall_2024",
+      "predicted_defect_risk": 0.9992,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0472,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -2.666257,
+          "absolute_contribution": 2.666257,
+          "transformed_value": 3.266784,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 2.610538,
+          "absolute_contribution": 2.610538,
+          "transformed_value": -4.551957,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 2.342148,
+          "absolute_contribution": 2.342148,
+          "transformed_value": 4.896223,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.974988,
+          "absolute_contribution": 1.974988,
+          "transformed_value": 3.158108,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.53561,
+          "absolute_contribution": 1.53561,
+          "transformed_value": 2.496453,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 1.271823,
+          "absolute_contribution": 1.271823,
+          "transformed_value": -2.237179,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 0.933293,
+          "absolute_contribution": 0.933293,
+          "transformed_value": 1.965063,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "field_surface_artificial_turf",
+          "raw_feature": "categorical__field_surface_artificial_turf",
+          "contribution": 0.783441,
+          "absolute_contribution": 0.783441,
+          "transformed_value": 1.0,
+          "coefficient": 0.783441,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-02120 (shoulder_pads) was flagged as critical risk with predicted defect probability of 99.9%. The strongest risk drivers were: material_condition_score, game_exposure_count, usage_sessions, practice_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-00239",
+      "equipment_type": "helmet",
+      "vendor": "Vendor_B",
+      "batch_id": "Vendor_B_B20",
+      "season": "Spring_2025",
+      "predicted_defect_risk": 0.999,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0998,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -3.247305,
+          "absolute_contribution": 3.247305,
+          "transformed_value": 3.978703,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 2.708912,
+          "absolute_contribution": 2.708912,
+          "transformed_value": 4.33169,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 2.483949,
+          "absolute_contribution": 2.483949,
+          "transformed_value": 4.038176,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 2.087126,
+          "absolute_contribution": 2.087126,
+          "transformed_value": -3.639291,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 2.017867,
+          "absolute_contribution": 2.017867,
+          "transformed_value": 4.218318,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.36325,
+          "absolute_contribution": 1.36325,
+          "transformed_value": 2.870344,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 1.329856,
+          "absolute_contribution": 1.329856,
+          "transformed_value": -2.339261,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "rain_exposure_count",
+          "raw_feature": "numeric__rain_exposure_count",
+          "contribution": -1.085524,
+          "absolute_contribution": 1.085524,
+          "transformed_value": 5.324237,
+          "coefficient": -0.203883,
+          "effect": "pushes_risk_down"
+        }
+      ],
+      "summary": "EQ-00239 (helmet) was flagged as critical risk with predicted defect probability of 99.9%. The strongest risk drivers were: usage_sessions, practice_exposure_count, material_condition_score, game_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-03872",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_D",
+      "batch_id": "Vendor_D_B14",
+      "season": "Spring_2025",
+      "predicted_defect_risk": 0.9989,
+      "risk_tier": "critical",
+      "anomaly_score": 0.105,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -2.757496,
+          "absolute_contribution": 2.757496,
+          "transformed_value": 3.378573,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 2.682029,
+          "absolute_contribution": 2.682029,
+          "transformed_value": -4.717779,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 2.512953,
+          "absolute_contribution": 2.512953,
+          "transformed_value": -4.381799,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 2.223163,
+          "absolute_contribution": 2.223163,
+          "transformed_value": 4.680906,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.952748,
+          "absolute_contribution": 1.952748,
+          "transformed_value": 3.122545,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.740656,
+          "absolute_contribution": 1.740656,
+          "transformed_value": 2.829798,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.612515,
+          "absolute_contribution": 1.612515,
+          "transformed_value": 3.370938,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 0.978256,
+          "absolute_contribution": 0.978256,
+          "transformed_value": 2.977986,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-03872 (shoulder_pads) was flagged as critical risk with predicted defect probability of 99.9%. The strongest risk drivers were: inspection_score, material_condition_score, repair_count, usage_sessions. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-01364",
+      "equipment_type": "helmet",
+      "vendor": "Vendor_A",
+      "batch_id": "Vendor_A_B01",
+      "season": "Fall_2024",
+      "predicted_defect_risk": 0.9986,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0441,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 2.020451,
+          "absolute_contribution": 2.020451,
+          "transformed_value": -3.554041,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -1.926741,
+          "absolute_contribution": 1.926741,
+          "transformed_value": 2.360705,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.727834,
+          "absolute_contribution": 1.727834,
+          "transformed_value": -3.0128,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.596906,
+          "absolute_contribution": 1.596906,
+          "transformed_value": 2.553536,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.509979,
+          "absolute_contribution": 1.509979,
+          "transformed_value": 2.454785,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 1.365735,
+          "absolute_contribution": 1.365735,
+          "transformed_value": 4.157543,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.36325,
+          "absolute_contribution": 1.36325,
+          "transformed_value": 2.870344,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.045023,
+          "absolute_contribution": 1.045023,
+          "transformed_value": 2.184604,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-01364 (helmet) was flagged as critical risk with predicted defect probability of 99.9%. The strongest risk drivers were: inspection_score, material_condition_score, usage_sessions, practice_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-01225",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_B",
+      "batch_id": "Vendor_B_B02",
+      "season": "Fall_2024",
+      "predicted_defect_risk": 0.9984,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0907,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -3.036015,
+          "absolute_contribution": 3.036015,
+          "transformed_value": 3.719823,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 2.087126,
+          "absolute_contribution": 2.087126,
+          "transformed_value": -3.639291,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.952748,
+          "absolute_contribution": 1.952748,
+          "transformed_value": 3.122545,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.793206,
+          "absolute_contribution": 1.793206,
+          "transformed_value": 3.775625,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.715025,
+          "absolute_contribution": 1.715025,
+          "transformed_value": 2.78813,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 1.707072,
+          "absolute_contribution": 1.707072,
+          "transformed_value": -3.002796,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.693585,
+          "absolute_contribution": 1.693585,
+          "transformed_value": 3.540414,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "rain_exposure_count",
+          "raw_feature": "numeric__rain_exposure_count",
+          "contribution": -0.810214,
+          "absolute_contribution": 0.810214,
+          "transformed_value": 3.973908,
+          "coefficient": -0.203883,
+          "effect": "pushes_risk_down"
+        }
+      ],
+      "summary": "EQ-01225 (shoulder_pads) was flagged as critical risk with predicted defect probability of 99.8%. The strongest risk drivers were: material_condition_score, usage_sessions, repair_count, practice_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-04341",
+      "equipment_type": "helmet",
+      "vendor": "Vendor_A",
+      "batch_id": "Vendor_A_B05",
+      "season": "Spring_2025",
+      "predicted_defect_risk": 0.9982,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0682,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 2.037861,
+          "absolute_contribution": 2.037861,
+          "transformed_value": -3.584665,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 1.753214,
+          "absolute_contribution": 1.753214,
+          "transformed_value": 5.337099,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.685867,
+          "absolute_contribution": 1.685867,
+          "transformed_value": 2.695788,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.612515,
+          "absolute_contribution": 1.612515,
+          "transformed_value": 3.370938,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -1.585795,
+          "absolute_contribution": 1.585795,
+          "transformed_value": 1.942967,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.433087,
+          "absolute_contribution": 1.433087,
+          "transformed_value": 2.32978,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.36325,
+          "absolute_contribution": 1.36325,
+          "transformed_value": 2.870344,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 0.960459,
+          "absolute_contribution": 0.960459,
+          "transformed_value": -1.674738,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-04341 (helmet) was flagged as critical risk with predicted defect probability of 99.8%. The strongest risk drivers were: inspection_score, fit_complaint_count, usage_sessions, game_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-03862",
+      "equipment_type": "helmet",
+      "vendor": "Vendor_B",
+      "batch_id": "Vendor_B_B10",
+      "season": "Fall_2025",
+      "predicted_defect_risk": 0.9981,
+      "risk_tier": "critical",
+      "anomaly_score": 0.047,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 2.072681,
+          "absolute_contribution": 2.072681,
+          "transformed_value": -3.645915,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -1.989167,
+          "absolute_contribution": 1.989167,
+          "transformed_value": 2.437192,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.793206,
+          "absolute_contribution": 1.793206,
+          "transformed_value": 3.775625,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.619146,
+          "absolute_contribution": 1.619146,
+          "transformed_value": 2.589099,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.450375,
+          "absolute_contribution": 1.450375,
+          "transformed_value": 3.031985,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.407456,
+          "absolute_contribution": 1.407456,
+          "transformed_value": 2.288112,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.38185,
+          "absolute_contribution": 1.38185,
+          "transformed_value": -2.409512,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 1.365735,
+          "absolute_contribution": 1.365735,
+          "transformed_value": 4.157543,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-03862 (helmet) was flagged as critical risk with predicted defect probability of 99.8%. The strongest risk drivers were: inspection_score, repair_count, usage_sessions, game_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-01732",
+      "equipment_type": "helmet",
+      "vendor": "Vendor_B",
+      "batch_id": "Vendor_B_B19",
+      "season": "Spring_2025",
+      "predicted_defect_risk": 0.9976,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0788,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -2.469373,
+          "absolute_contribution": 2.469373,
+          "transformed_value": 3.025555,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 2.063949,
+          "absolute_contribution": 2.063949,
+          "transformed_value": 3.300361,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.936796,
+          "absolute_contribution": 1.936796,
+          "transformed_value": 4.048842,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.838727,
+          "absolute_contribution": 1.838727,
+          "transformed_value": -3.206161,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.766287,
+          "absolute_contribution": 1.766287,
+          "transformed_value": 2.871467,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 1.556185,
+          "absolute_contribution": 1.556185,
+          "transformed_value": -2.737382,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 1.36325,
+          "absolute_contribution": 1.36325,
+          "transformed_value": 2.870344,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "field_surface_artificial_turf",
+          "raw_feature": "categorical__field_surface_artificial_turf",
+          "contribution": 0.783441,
+          "absolute_contribution": 0.783441,
+          "transformed_value": 1.0,
+          "coefficient": 0.783441,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-01732 (helmet) was flagged as critical risk with predicted defect probability of 99.8%. The strongest risk drivers were: usage_sessions, game_exposure_count, material_condition_score, practice_exposure_count. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-02877",
+      "equipment_type": "shoulder_pads",
+      "vendor": "Vendor_B",
+      "batch_id": "Vendor_B_B02",
+      "season": "Fall_2025",
+      "predicted_defect_risk": 0.9975,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0495,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 2.223163,
+          "absolute_contribution": 2.223163,
+          "transformed_value": 4.680906,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -2.210062,
+          "absolute_contribution": 2.210062,
+          "transformed_value": 2.707839,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.952748,
+          "absolute_contribution": 1.952748,
+          "transformed_value": 3.122545,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.766287,
+          "absolute_contribution": 1.766287,
+          "transformed_value": 2.871467,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 1.654842,
+          "absolute_contribution": 1.654842,
+          "transformed_value": -2.910922,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.568149,
+          "absolute_contribution": 1.568149,
+          "transformed_value": -2.734359,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.531445,
+          "absolute_contribution": 1.531445,
+          "transformed_value": 3.201461,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "rain_exposure_count",
+          "raw_feature": "numeric__rain_exposure_count",
+          "contribution": -0.603732,
+          "absolute_contribution": 0.603732,
+          "transformed_value": 2.96116,
+          "coefficient": -0.203883,
+          "effect": "pushes_risk_down"
+        }
+      ],
+      "summary": "EQ-02877 (shoulder_pads) was flagged as critical risk with predicted defect probability of 99.8%. The strongest risk drivers were: repair_count, usage_sessions, practice_exposure_count, inspection_score. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    },
+    {
+      "item_id": "EQ-02052",
+      "equipment_type": "helmet",
+      "vendor": "Vendor_A",
+      "batch_id": "Vendor_A_B12",
+      "season": "Fall_2024",
+      "predicted_defect_risk": 0.9973,
+      "risk_tier": "critical",
+      "anomaly_score": 0.0255,
+      "anomaly_flag": 1,
+      "recommended_action": "Remove from active rotation and inspect immediately.",
+      "top_contributions": [
+        {
+          "feature": "repair_count",
+          "raw_feature": "numeric__repair_count",
+          "contribution": 2.65312,
+          "absolute_contribution": 2.65312,
+          "transformed_value": 5.586187,
+          "coefficient": 0.474943,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "age_days",
+          "raw_feature": "numeric__age_days",
+          "contribution": -1.912334,
+          "absolute_contribution": 1.912334,
+          "transformed_value": 2.343054,
+          "coefficient": -0.816172,
+          "effect": "pushes_risk_down"
+        },
+        {
+          "feature": "material_condition_score",
+          "raw_feature": "numeric__material_condition_score",
+          "contribution": 1.421771,
+          "absolute_contribution": 1.421771,
+          "transformed_value": -2.479122,
+          "coefficient": -0.573498,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "usage_sessions",
+          "raw_feature": "numeric__usage_sessions",
+          "contribution": 1.418986,
+          "absolute_contribution": 1.418986,
+          "transformed_value": 2.269031,
+          "coefficient": 0.625371,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "inspection_score",
+          "raw_feature": "numeric__inspection_score",
+          "contribution": 1.312446,
+          "absolute_contribution": 1.312446,
+          "transformed_value": -2.308636,
+          "coefficient": -0.568494,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "game_exposure_count",
+          "raw_feature": "numeric__game_exposure_count",
+          "contribution": 1.288234,
+          "absolute_contribution": 1.288234,
+          "transformed_value": 2.693033,
+          "coefficient": 0.478358,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "practice_exposure_count",
+          "raw_feature": "numeric__practice_exposure_count",
+          "contribution": 1.22804,
+          "absolute_contribution": 1.22804,
+          "transformed_value": 1.996434,
+          "coefficient": 0.615117,
+          "effect": "pushes_risk_up"
+        },
+        {
+          "feature": "fit_complaint_count",
+          "raw_feature": "numeric__fit_complaint_count",
+          "contribution": 0.978256,
+          "absolute_contribution": 0.978256,
+          "transformed_value": 2.977986,
+          "coefficient": 0.328496,
+          "effect": "pushes_risk_up"
+        }
+      ],
+      "summary": "EQ-02052 (helmet) was flagged as critical risk with predicted defect probability of 99.7%. The strongest risk drivers were: repair_count, material_condition_score, usage_sessions, inspection_score. Recommended action: review inspection history, verify physical condition, and compare against similar items from the same equipment type or vendor."
+    }
+  ]
+}
