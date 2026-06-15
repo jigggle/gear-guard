@@ -1,0 +1,91 @@
+{
+  "baseline_season": "Fall_2024",
+  "current_season": "Spring_2025",
+  "features_checked": 15,
+  "major_drift_count": 3,
+  "moderate_drift_count": 0,
+  "stable_count": 12,
+  "top_drifted_features": [
+    {
+      "feature": "inspection_score",
+      "drift_status": "major_drift",
+      "psi": 0.0707,
+      "ks_statistic": 0.0966,
+      "ks_p_value": 1e-06,
+      "interpretation": "inspection_score decreased; inspection outcomes changed."
+    },
+    {
+      "feature": "anomaly_score",
+      "drift_status": "major_drift",
+      "psi": 0.0364,
+      "ks_statistic": 0.0683,
+      "ks_p_value": 0.001035,
+      "interpretation": "anomaly_score increased; unusual equipment signatures became more or less common."
+    },
+    {
+      "feature": "predicted_defect_risk",
+      "drift_status": "major_drift",
+      "psi": 0.0349,
+      "ks_statistic": 0.065,
+      "ks_p_value": 0.002131,
+      "interpretation": "predicted_defect_risk decreased; overall model-estimated quality risk shifted."
+    },
+    {
+      "feature": "age_days",
+      "drift_status": "stable",
+      "psi": 0.0161,
+      "ks_statistic": 0.0381,
+      "ks_p_value": 0.187168,
+      "interpretation": "age_days decreased; feature distribution changed."
+    },
+    {
+      "feature": "laundry_cycles",
+      "drift_status": "stable",
+      "psi": 0.0145,
+      "ks_statistic": 0.0428,
+      "ks_p_value": 0.101949,
+      "interpretation": "laundry_cycles decreased; feature distribution changed."
+    },
+    {
+      "feature": "rain_exposure_count",
+      "drift_status": "stable",
+      "psi": 0.0126,
+      "ks_statistic": 0.0364,
+      "ks_p_value": 0.229843,
+      "interpretation": "rain_exposure_count decreased; feature distribution changed."
+    },
+    {
+      "feature": "usage_sessions",
+      "drift_status": "stable",
+      "psi": 0.0125,
+      "ks_statistic": 0.036,
+      "ks_p_value": 0.241505,
+      "interpretation": "usage_sessions decreased; usage volume changed between seasons."
+    },
+    {
+      "feature": "surface_wear_score",
+      "drift_status": "stable",
+      "psi": 0.0117,
+      "ks_statistic": 0.0238,
+      "ks_p_value": 0.739169,
+      "interpretation": "surface_wear_score decreased; visible wear patterns changed."
+    },
+    {
+      "feature": "impact_count",
+      "drift_status": "stable",
+      "psi": 0.0111,
+      "ks_statistic": 0.0254,
+      "ks_p_value": 0.663162,
+      "interpretation": "impact_count decreased; contact or collision exposure changed."
+    },
+    {
+      "feature": "practice_exposure_count",
+      "drift_status": "stable",
+      "psi": 0.0086,
+      "ks_statistic": 0.0365,
+      "ks_p_value": 0.228238,
+      "interpretation": "practice_exposure_count decreased; feature distribution changed."
+    }
+  ],
+  "method": "Drift is measured with Population Stability Index and two-sample Kolmogorov-Smirnov tests."
+}
