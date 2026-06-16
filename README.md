@@ -425,6 +425,10 @@ Dashboard tabs:
 
 ![Item Explanation](docs/screenshots/item_explanation.png)
 
+### Model Report
+
+![Model Report](docs/screenshots/model_report.png)
+
 ---
 
 ## Example Operational Insights

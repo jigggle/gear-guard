@@ -7,6 +7,7 @@ from typing import Any, cast
 import numpy as np
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import streamlit as st
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -79,6 +80,34 @@ def sort_dataframe(
         pd.DataFrame,
         cast(Any, df).sort_values(by=by, ascending=ascending),
     )
+
+
+def get_scalar(row: pd.Series, column: str) -> Any:
+    value = row.at[column]
+    if hasattr(value, "item"):
+        return value.item()
+    return value
+
+
+def numeric_quantile(df: pd.DataFrame, column: str, q: float) -> float:
+    values = np.asarray(df[column], dtype=float)
+    return float(np.quantile(values, q))
+
+
+def build_risk_counts(df: pd.DataFrame) -> pd.DataFrame:
+    risk_order = ["critical", "high", "medium", "low"]
+    records: list[dict[str, Any]] = []
+
+    for risk_tier in risk_order:
+        count = mask_count(df["risk_tier"] == risk_tier)
+        records.append(
+            {
+                "risk_tier": risk_tier,
+                "item_count": count,
+            }
+        )
+
+    return pd.DataFrame(records)
 
 
 df = load_csv(SCORED_DATA_PATH)
@@ -189,6 +218,40 @@ with tabs[0]:
         hide_index=True,
     )
 
+    st.subheader("Equipment Type × Vendor Quality Heatmap")
+
+    heatmap_df = cast(
+        pd.DataFrame,
+        cast(Any, df).pivot_table(
+            index="equipment_type",
+            columns="vendor",
+            values="predicted_defect_risk",
+            aggfunc="mean",
+        ),
+    )
+
+    fig = px.imshow(
+        heatmap_df,
+        text_auto=True,
+        aspect="auto",
+        title="Average Predicted Defect Risk by Equipment Type and Vendor",
+        labels={
+            "x": "Vendor",
+            "y": "Equipment Type",
+            "color": "Avg Predicted Risk",
+        },
+    )
+
+    fig.update_traces(
+        texttemplate="%{z:.1%}",
+        hovertemplate=(
+            "Equipment Type: %{y}<br>"
+            "Vendor: %{x}<br>"
+            "Avg Predicted Risk: %{z:.1%}<extra></extra>"
+        ),
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
 with tabs[1]:
     st.subheader("Risk Scoring")
 
@@ -239,6 +302,70 @@ with tabs[1]:
         title="Predicted Defect Risk Distribution",
         labels={"predicted_defect_risk": "Predicted Defect Risk"},
     )
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.subheader("Risk vs Anomaly Quadrant")
+
+    risk_threshold = 0.50
+    anomaly_threshold = numeric_quantile(df, "anomaly_score", 0.95)
+
+    fig = px.scatter(
+        df,
+        x="predicted_defect_risk",
+        y="anomaly_score",
+        color="risk_tier",
+        hover_data=[
+            "item_id",
+            "equipment_type",
+            "vendor",
+            "batch_id",
+            "season",
+            "inspection_score",
+            "surface_wear_score",
+            "repair_count",
+            "recommended_action",
+        ],
+        title="Predicted Defect Risk vs Anomaly Score",
+        labels={
+            "predicted_defect_risk": "Predicted Defect Risk",
+            "anomaly_score": "Anomaly Score",
+            "risk_tier": "Risk Tier",
+        },
+    )
+
+    fig.add_vline(
+        x=risk_threshold,
+        line_dash="dash",
+        annotation_text="Risk threshold",
+    )
+
+    fig.add_hline(
+        y=anomaly_threshold,
+        line_dash="dash",
+        annotation_text="Top anomaly band",
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.caption(
+        "Items in the upper-right region combine high predicted defect risk with unusual quality signatures."
+    )
+
+    st.subheader("Inspection Workload by Risk Tier")
+
+    risk_counts = build_risk_counts(df)
+
+    fig = px.funnel(
+        risk_counts,
+        x="item_count",
+        y="risk_tier",
+        title="Inspection Workload Funnel",
+        labels={
+            "item_count": "Item Count",
+            "risk_tier": "Risk Tier",
+        },
+    )
+
     st.plotly_chart(fig, use_container_width=True)
 
 with tabs[2]:
@@ -296,9 +423,9 @@ with tabs[2]:
 with tabs[3]:
     st.subheader("Drift Monitor")
 
-    major_count = int((drift_report["drift_status"] == "major_drift").sum())
-    moderate_count = int((drift_report["drift_status"] == "moderate_drift").sum())
-    stable_count = int((drift_report["drift_status"] == "stable").sum())
+    major_count = mask_count(drift_report["drift_status"] == "major_drift")
+    moderate_count = mask_count(drift_report["drift_status"] == "moderate_drift")
+    stable_count = mask_count(drift_report["drift_status"] == "stable")
 
     col1, col2, col3 = st.columns(3)
     col1.metric("Major Drift Features", major_count)
@@ -322,6 +449,41 @@ with tabs[3]:
             "ks_statistic": "KS Statistic",
         },
     )
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.subheader("Baseline vs Current Quality Signal Shift")
+
+    top_drift = drift_report.head(8).copy()
+
+    fig = go.Figure()
+
+    for _, row in top_drift.iterrows():
+        feature = str(get_scalar(row, "feature"))
+        baseline_mean = float(get_scalar(row, "baseline_mean"))
+        current_mean = float(get_scalar(row, "current_mean"))
+        drift_status = str(get_scalar(row, "drift_status"))
+
+        fig.add_trace(
+            go.Scatter(
+                x=[baseline_mean, current_mean],
+                y=[feature, feature],
+                mode="lines+markers",
+                name=feature,
+                hovertemplate=(
+                    "Feature: %{y}<br>"
+                    "Value: %{x:.4f}<br>"
+                    f"Drift status: {drift_status}<extra></extra>"
+                ),
+                showlegend=False,
+            )
+        )
+
+    fig.update_layout(
+        title="Baseline vs Current Feature Means",
+        xaxis_title="Feature Mean",
+        yaxis_title="Feature",
+    )
+
     st.plotly_chart(fig, use_container_width=True)
 
 with tabs[4]:
@@ -353,6 +515,33 @@ with tabs[4]:
 
     contributions_df = pd.DataFrame(selected_explanation["top_contributions"])
 
+    st.subheader("Risk Contribution Waterfall")
+
+    waterfall_df = sort_dataframe(
+        contributions_df,
+        by="absolute_contribution",
+        ascending=False,
+    ).head(8)
+
+    fig = go.Figure(
+        go.Waterfall(
+            orientation="v",
+            measure=["relative"] * len(waterfall_df),
+            x=waterfall_df["feature"],
+            y=waterfall_df["contribution"],
+            text=[f"{value:.3f}" for value in waterfall_df["contribution"]],
+            textposition="outside",
+        )
+    )
+
+    fig.update_layout(
+        title=f"Top Feature Contributions for {selected_item_id}",
+        xaxis_title="Feature",
+        yaxis_title="Contribution to Risk Score",
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
+
     st.dataframe(
         contributions_df[
             [
@@ -367,8 +556,14 @@ with tabs[4]:
         hide_index=True,
     )
 
+    contributions_sorted = sort_dataframe(
+        contributions_df,
+        by="absolute_contribution",
+        ascending=True,
+    )
+
     fig = px.bar(
-        contributions_df.sort_values("absolute_contribution", ascending=True),
+        contributions_sorted,
         x="contribution",
         y="feature",
         orientation="h",
@@ -376,6 +571,7 @@ with tabs[4]:
         title=f"Top Risk Contributions for {selected_item_id}",
     )
     st.plotly_chart(fig, use_container_width=True)
+
 
 with tabs[5]:
     st.subheader("Model Report")
@@ -405,8 +601,14 @@ with tabs[5]:
         hide_index=True,
     )
 
+    top_feature_importance = sort_dataframe(
+        cast(pd.DataFrame, feature_importance.head(15)),
+        by="importance",
+        ascending=True,
+    )
+
     fig = px.bar(
-        feature_importance.head(15).sort_values("importance", ascending=True),
+        top_feature_importance,
         x="importance",
         y="feature",
         orientation="h",
