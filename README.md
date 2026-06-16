@@ -407,6 +407,24 @@ Dashboard tabs:
 - **Item Explanation**: item-level drivers behind high-risk predictions
 - **Model Report**: selected model, threshold, recall, precision, PR-AUC, and feature importance
 
+## Dashboard Screenshots
+
+### Overview
+
+![Overview](docs/screenshots/overview.png)
+
+### Risk Scoring
+
+![Risk Scoring](docs/screenshots/risk_scoring.png)
+
+### Drift Monitor
+
+![Drift Monitor](docs/screenshots/drift_monitor.png)
+
+### Item Explanation
+
+![Item Explanation](docs/screenshots/item_explanation.png)
+
 ---
 
 ## Example Operational Insights
