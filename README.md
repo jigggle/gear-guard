@@ -547,6 +547,17 @@ streamlit run app/streamlit_app.py
 
 ## Reproduce the Full Pipeline
 
+Create the virtual environment and install dependencies:
+
+```bash
+make setup
+make all
+make dashboard
+make test
+```
+
+**OR**
+
 Run the commands in order:
 
 ```bash
