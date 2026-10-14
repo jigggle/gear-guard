@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import Any, cast
 
@@ -11,6 +12,9 @@ import plotly.graph_objects as go
 import streamlit as st
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
+
+from bootstrap import artifacts_ready, ensure_artifacts  # noqa: E402
 
 SCORED_DATA_PATH = PROJECT_ROOT / "data" / "processed" / "equipment_quality_scored.csv"
 MODEL_REPORT_PATH = PROJECT_ROOT / "reports" / "model_report.json"
@@ -25,6 +29,17 @@ st.set_page_config(
     page_icon="🛡️",
     layout="wide",
 )
+
+
+@st.cache_resource(show_spinner=False)
+def build_artifacts_once() -> bool:
+    ensure_artifacts()
+    return True
+
+
+if not artifacts_ready():
+    with st.spinner("First run: building the synthetic data and models (about a minute)..."):
+        build_artifacts_once()
 
 
 @st.cache_data
